@@ -37,29 +37,29 @@ for i in range(b):
     calificaciones.append(notas)
 
 print("Promedio por Alumno")
+promedios_alumnos = []  
 for i in range(b):
     promedio_alumno = sum(calificaciones[i]) / m
-    promedios_alumnos = []
-    promedio_alumno = sum(calificaciones[i]) / m
-    promedios_alumnos.append(promedio_alumno)
+    promedios_alumnos.append(promedio_alumno)  
     print(f"{nombres[i]}: {promedio_alumno:.2f}")
 
-
+# Promedio general
 todas = [nota for sublista in calificaciones for nota in sublista]
 promedio_grupo = sum(todas) / len(todas)
 print(f"\nPromedio general del grupo: {promedio_grupo:.2f}")
 
-promedio_min = min(promedio_alumno)
-promedio_max = max(promedio_alumno)
-indice_min = nombres.index(promedio_min)
-indice_max = nombres.index(promedio_max)
+# Min y max
+promedio_min = min(promedios_alumnos)
+promedio_max = max(promedios_alumnos)
+indice_min = promedios_alumnos.index(promedio_min)
+indice_max = promedios_alumnos.index(promedio_max)
 
-print(f"Promedio mas bajo: {promedio_min} ({nombres[indice_min]})")
-print(f"Promedio mas alto: {promedio_max} ({nombres[indice_max]})")
+print(f"Promedio más bajo: {promedio_min:.2f} ({nombres[indice_min]})")
+print(f"Promedio más alto: {promedio_max:.2f} ({nombres[indice_max]})")
 
-calificaciones_ordenadas= sorted(promedio_alumno)
-print (f"las calificaciones ordenadas son {calificaciones_ordenadas}")
-
+# Ordenados de mayor a menor
+calificaciones_ordenadas = sorted(promedios_alumnos, reverse=True)
+print(f"\nLos promedios ordenados de mayor a menor son: {calificaciones_ordenadas}")
 
 buscar = int(input("Ingresa la calificación que quieres buscar: "))
 
@@ -70,7 +70,7 @@ for i in range(b):
         encontrados.append(nombres[i])
 
 if encontrados:
-    print(f"La calificación {buscar} la tienen: {', '.join(encontrados)}")
+    print(f"La calificación {buscar} la tiene: {', '.join(encontrados)}")
 else:
     print(f"Ningún alumno tiene la calificación {buscar} ")
 
