@@ -5,40 +5,40 @@
 # 3.- Que permita buscar si una calificacion especifica (ingresada por el usuario) se encuentra en el arreglo 
 # 4- Que muestre los resultados de forma clara en la pantalla 
 # Programa: Promedio y búsqueda de calificaciones
-while True: #repetimos el ciclo 
-# Pedimos el número de alumnos
+while True:  # repetimos el ciclo 
+    # Pedimos el número de alumnos
     b = int(input("¿Cuántos alumnos tienes? "))
-    if b <= 0 :
-        print ("Numero inexistente, adios")
+    if b <= 0:
+        print("Número inexistente, adiós")
         break
 
-# Guardamos los nombres en una lista
+    # Guardamos los nombres en una lista
     nombres = []
     for i in range(b):
         nombre = input(f"Ingresa el nombre del alumno {i+1}: ")
         nombres.append(nombre)
 
-# Pedimos el número de materias
+    # Pedimos el número de materias
     m = int(input("¿Cuántas materias tienen los alumnos? "))
 
-# Creamos un arreglo para calificaciones
+    # Creamos un arreglo para calificaciones
     calificaciones = []
 
-
+    # Recorremos cada alumno y pedimos sus calificaciones
     for i in range(b):
         print(f"\nAlumno: {nombres[i]}")
-    notas = []
-    for j in range(m):
-        cal = int(input(f"  Calificación {j+1}: "))
-        # Validamos que la calificación esté entre 0 y 100
-        if cal < 0 or cal > 100:
-            print("  ⚠️ Calificación no válida, se pondrá 0")
-            cal = 0
-        notas.append(cal)
-    calificaciones.append(notas)
+        notas = []
+        for j in range(m):
+            cal = int(input(f"  Calificación {j+1}: "))
+            # Validamos que la calificación esté entre 0 y 100
+            if cal < 0 or cal > 100:
+                print("  ⚠️ Calificación no válida, se pondrá 0")
+                cal = 0
+            notas.append(cal)
+        calificaciones.append(notas)
 
-# 3. Calculamos promedios
-    print("Promedio por Alumno")
+    # Calculamos promedios
+    print("\nPromedio por Alumno")
     for i in range(b):
         promedio_alumno = sum(calificaciones[i]) / m
         print(f"{nombres[i]}: {promedio_alumno:.2f}")
@@ -56,11 +56,11 @@ while True: #repetimos el ciclo
             encontrados.append(nombres[i])
 
     if encontrados:
-     print(f"La calificación {buscar} la tienen: {', '.join(encontrados)}")
+        print(f"La calificación {buscar} la tienen: {', '.join(encontrados)}")
     else:
-        print(f"Ningún alumno tiene la calificación {buscar} ")
+        print(f"Ningún alumno tiene la calificación {buscar}")
 
     repetir = input("\n¿Quieres calcular otro grupo? (s/n): ").lower()
     if repetir != "s":
-        print("Adios :3")
+        print("Adiós :3")
         break
