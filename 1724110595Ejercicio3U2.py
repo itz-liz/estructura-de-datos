@@ -3,3 +3,4 @@
 #2. Utilizar la pila para invertir la palabra
 #3. Comparar
 #invertida (si son iguales = palindromo y si son diferentes debe decir que no es palindromo)
+
